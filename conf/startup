@@ -1,0 +1,14 @@
+#!/bin/bash
+
+NAME="sse"
+SITEDIR=/srv/www/simple-stock-exchange
+VIRTENV=/home/ubuntu/virtualenvs/sse
+
+echo "Hi there, starting $NAME"
+
+# Activate virtual environment
+cd $VIRTENV
+source ./bin/activate
+
+cd $SITEDIR
+exec python app.py

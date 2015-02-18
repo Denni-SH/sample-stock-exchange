@@ -1,0 +1,68 @@
+{% extends 'template.html' %}
+
+{% block title %}
+Welcome
+{% end %}
+
+{% block js %}
+<script src="{{ static_url('bower_components/handlebars/handlebars.min.js') }}"></script>
+<script src="{{ static_url('trade.js') }}"></script>
+{% end %}
+
+{% block css %}
+<link href="{{ static_url('trade.css') }}" rel="stylesheet">
+{% end %}
+
+{% block content %}
+<div class="page-header">
+    <h1>Trade dem stocks! <small>active traders: <span id="sse-trader-count"></span></small></h1>
+</div>
+
+<div id="sse-trade-overview">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="row">
+                <div class="col-md-12 form-group">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="e.g. AAPL, GM" id="sse_symbols">
+                        <span class="input-group-btn">
+                            <button class="btn btn-success" type="button" id="sse_find_symbol">
+                                <span class="glyphicon glyphicon-search"></span>
+                                Find
+                            </button>
+                        </span>
+                    </div>
+                    <p class="help-block" id="sse_find_help">
+                        Search for any company's stock symbol (separate symbols with a comma)
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12" id="sse_stocks">
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-8">
+            <div class="row">
+                <div class="col-md-6">
+                    <h4>Current Portfolio</h4>
+                </div>
+                <div class="col-md-6">
+                    <h4>
+                        $<span id="sse_cash">100000.00</span>
+                        <small><span id="sse_delta"></span></small>
+                    </h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12" id="sse_portfolio">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="sse_modal"></div>
+<br />
+
+{% end %}

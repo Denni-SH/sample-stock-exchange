@@ -1,0 +1,32 @@
+{{#each stocks}}
+<div class="sse_stock">
+    <h4 id="sse_stock_header">
+        <a href="#" class="sse-display-stock" data-symbol="{{ symbol }}">
+            {{ name }} ({{ symbol }})
+        </a>
+    </h4>
+    <div class="row sse-margin">
+        <div class="col-md-6 sse-bid" data-bid="{{ bid }}">
+            <strong>Bid</strong>: ${{ bid }}
+        </div>
+        <div class="col-md-6 sse-ask" data-ask="{{ ask }}">
+            <strong>Ask</strong>: ${{ ask }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <input type="text" class="form-control sse-quantity" placeholder="Enter Quantity ...">
+                <p class="help-block">
+                    Enter number of stocks you wish to buy or sell
+                </p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <button class="btn btn-success sse-buy">Buy</button>
+            <button class="btn btn-warning sse-sell">Sell</button>
+        </div>
+    </div>
+</div>
+<hr />
+{{/each}}

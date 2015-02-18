@@ -1,0 +1,19 @@
+.sse-margin {
+    margin-bottom: 12px;
+}
+
+#sse_stock {
+    display: none;
+}
+
+#sse_sell {
+    display: none;
+}
+
+.sse-gain {
+    color: limegreen;
+}
+
+.sse-loss {
+    color: tomato;
+}

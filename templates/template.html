@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+		{% block css %}{% end %}
+
+		<title>{% block title %}{% end %} - SSE</title>
+	</head>
+	<body>
+        <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navcol">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">Simple Stock Exchange</a>
+                </div>
+                <div class="collapse navbar-collapse" id="navcol">
+                    <ul class="nav navbar-nav">
+                        <li><a href="/trade">Trade</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+		<div class="container">
+            {% block content %}{% end %}
+			<hr />
+			&copy; Copyright 2014 by <a href="http://neurosnap.net">Eric Bower</a>
+		</div>
+		<br /><br />
+
+        <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+        <script src="{{ static_url('core.js') }}"></script>
+        {% block js %}{% end %}
+
+	</body>
+</html>
